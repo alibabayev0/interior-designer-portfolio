@@ -22,3 +22,11 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+
+
+### Colors 
+Beige - `#EEECE5`
+White - `#F8F8F8`
+Black - `#1C1C1D`
+Gold - `#928C00`
