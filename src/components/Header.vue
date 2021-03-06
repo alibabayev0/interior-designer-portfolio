@@ -19,13 +19,8 @@
         </router-link>
       </li>
       <li class="nav-list">
-        <router-link to="/Service">
-            Service
-        </router-link>
-      </li>
-      <li class="nav-list">
-        <router-link to="/Portfolio">
-            Portfolio
+        <router-link to="/Works">
+            My Works
         </router-link>
       </li>
       <li class="nav-list">

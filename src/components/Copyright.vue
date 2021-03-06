@@ -8,6 +8,8 @@
         display: flex;
         padding-left: 10%;
         padding-right: 10%;
+        margin-top: 60px;
+        margin-bottom: 10px;
     }
 
     p {

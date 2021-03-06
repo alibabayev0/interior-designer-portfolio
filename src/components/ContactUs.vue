@@ -1,7 +1,7 @@
 <template>
     <div class="header">
         <div class="line"></div>
-        <p>Contact us</p>
+        <p>GET IN TOUCH</p>
         <div class="line"></div>
     </div>
     <div class="container">
