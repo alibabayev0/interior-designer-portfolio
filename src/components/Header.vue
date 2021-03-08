@@ -1,6 +1,7 @@
 <template>
   <div class="container">
-    <div class="logo"><p>GUNAY BABAYEVA</p> 
+    <div class="logo">
+      <p>GUNAY BABAYEVA</p> 
       <div class="menu" v-on:click="navbar_open">
         <div class="menu-item"></div>
         <div class="menu-item"></div>
@@ -50,6 +51,7 @@
 .logo {
   font-family: Poppins,sans-serif;
   font-weight: 300;
+  white-space: nowrap;
 }
 
 .container {
@@ -159,6 +161,7 @@
 @media (max-width: 1035.98px) { 
   .container{
     flex-direction: column;
+    padding: 1em 10% 1em 15%;
   }
 
   .logo {
