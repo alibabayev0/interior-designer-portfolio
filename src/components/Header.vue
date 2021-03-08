@@ -24,11 +24,6 @@
             My Works
         </router-link>
       </li>
-      <li class="nav-list">
-        <router-link to="/Resume">
-            Resume
-        </router-link>
-      </li>
       <li>
         <button class="contact-us">Contact Us</button>
       </li>

@@ -85,8 +85,8 @@
 .header .h-item{
     display: flex;
     align-items: flex-end;
-    border-left: 2px solid #888;
-    border-right: 2px solid #888;
+    border-left: 2px solid #b8b8b8;
+    border-right: 2px solid #b8b8b8;
     height: 200px;
     width: 18%;
     font-size: 1em;
@@ -101,7 +101,7 @@
 .project-card {
     display: flex;
     flex-direction: column;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid #b8b8b8;
 }
 
 .card-header {
@@ -140,20 +140,24 @@
     min-width: 20%;
     border: 1px solid grey;
     border-left: 0;
+    border-top: 0;
     flex: 1;
+    padding-top: 15px;
+    padding-bottom: 15px;
 }
 
 .info div {
-    margin: 0 0 40px 60px;
+    margin: 0 0 30px 35px;
 }
 
 .info div p:first-child {
-    font-size: 2em;
+    font-size: 1.75em;
+    font-weight: 900;
 }
 
 .info div p:not(:first-child) {
     font-size: 0.9em;
-    color:#888
+    color:#616161
 }
 
 .owner {
@@ -164,8 +168,8 @@
     width: 300px;
     min-width: 20%;
     border: 1px solid grey;
+    border-top: 0;
     border-left: 0;
-    border-right: 0;
     flex: 1;
 }
 
@@ -196,7 +200,7 @@
 .description {
     flex: 2;
     text-align: center;
-    color:#888;
+    color:#616161
 }
 
 .next-project {
@@ -251,7 +255,7 @@
     flex-direction: column;
     min-width: 46%;
     margin-left: 10%;
-    border-left: 4px solid #888;
+    border-left: 4px solid #b8b8b8;
     font-size: 2em;
     font-family: Poppins,sans-serif;
     padding-top: 1em;
@@ -259,7 +263,7 @@
 
 .card-name {
     padding: 100px 100px 10px 40px;
-    border-bottom: 4px solid #888;
+    border-bottom: 4px solid #b8b8b8;
     width: 46%;
     max-width: 250px;
     text-transform: capitalize;
@@ -281,7 +285,7 @@
     padding: 120px 40px 0 40px;
     width: 75%; 
     max-width: 350px;
-    border-bottom: 4px solid #888;
+    border-bottom: 4px solid #b8b8b8;
 }
 
 .card-image img{
@@ -338,12 +342,12 @@
 
 .modal-content, #caption {
   animation-name: zoom;
-  animation-duration: 0.3s;
+  animation-duration: 0.5s;
 }
 
 @keyframes zoom {
   from {
-    transform:scale(0.5);
+    transform:scale(0);
   }
   to {
     transform:scale(1);
@@ -373,22 +377,23 @@
 
 
 @media (max-width: 1245.98px) { 
-   .info {
-       align-items: center;
-   }
+    .info {
+        align-items: center;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
 
-   .info div {
-       margin: 0 0 0 70px;
-   }
+    .info div {
+        margin: 0 0 0 70px;
+    }
 
-   .owner {
-       align-items: center;
-   }
+    .owner {
+        align-items: center;
+    }
 
-   .owner div {
-       margin: 0 0 0 70px;
-   }
-
+    .owner div {
+        margin: 0 0 0 70px;
+    }
 }
 
 @media only screen and (max-width: 700px){
@@ -453,7 +458,6 @@ export default {
         openImage(src,alt) {
             this.$refs.modal.style.display = "flex";
             this.$refs.img.src = src;
-            console.log(this.$refs.caption);
             this.$refs.caption.textContent = alt;
         },
         closeImage() {
