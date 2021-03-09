@@ -47,18 +47,18 @@
   <div class="container">
     <div class="project-info">
       <div class="project-title">
-        Dream House
+        {{ current_project.name }}
       </div>
 
       <p class="sidebar">Location</p>
-      <p>Example</p>
+      <p>{{ current_project.location }}</p>
       <p class="sidebar">Owner</p>
-      <p>Example</p>  
+      <p>{{ current_project.owner }}</p>  
       <p class="sidebar">Date</p>
-      <p>Example</p>      
+      <p>{{ current_project.date }}</p>      
 
       <div class="project-description">
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis facilis nihil ullam quos eum expedita maiores veniam minima, dolores reprehenderit soluta architecto voluptatibus similique nulla perspiciatis magnam quisquam repudiandae veritatis!
+        {{ current_project.description}}
       </div>
 
       <div class="project-nav">
@@ -89,13 +89,9 @@
     </div>
     <div class="project-content">
         <div class="project-header">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero nemo dicta saepe nesciunt ratione fugiat repudiandae 
+          {{current_project.description}}
         </div>
-        <img class="project-item" src="../assets/item-1.jpg"/>
-        <img class="project-item" src="../assets/item-2.jpg"/>
-        <img class="project-item" src="../assets/item-3.jpg"/>
-        <img class="project-item" src="../assets/item-4.jpg"/>
-        <img class="project-item" src="../assets/item-5.jpg"/>
+        <img  class="project-item" v-for="item in current_project.images" :key="item" :src="item"  v-on:click="openImage(images, name)"/>
     </div>  
   </div>
   <div id="myModal" class="modal" ref="modal">
@@ -116,6 +112,7 @@
   margin: 0;
   padding: 0;
   font-family: Poppins,sans-serif;
+  box-sizing: border-box;
 }
 
 .container {
@@ -129,6 +126,7 @@
   flex-direction: column;
   position: sticky;
   max-height: 100vh;
+  min-height: 100vh;
   width: 100%;
   top: 0;
   padding-left:30px;
@@ -155,6 +153,7 @@
 .project-description {
   margin-top: 40px;
   margin-bottom: 80px;
+  line-height: 18px;
 }
 
 
@@ -173,6 +172,10 @@
   flex: 5;
 }
 
+.project-content img {
+  max-width: 100%;
+}
+
 .project-header {
   font-weight: 900;
   font-size: 2.3vw;
@@ -186,8 +189,10 @@
 
 .project-nav {
   display: flex;
-  margin-top:25%;
-  padding-bottom:5%;
+  justify-self: flex-end;
+  align-items: flex-end;
+  flex-grow: 1;
+  padding-bottom:10%;
 }
 
 .prev {
@@ -211,6 +216,7 @@
   background-color: transparent;
   border: 0;
   flex:1;
+  padding: 8px;
   cursor: pointer;
 }
 
@@ -222,6 +228,73 @@
 .next-button img {
   margin-left: 7px;
 }
+
+.modal {
+    display: none; /* Hidden by default */
+    flex-direction: column;
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    /* Black w/ opacity */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); 
+    backdrop-filter: blur(8px);
+}
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 800px;
+}
+.modal-content img {
+    max-width: 800px;
+}
+#caption {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 20px;
+    font-size: 1.2em;
+    text-transform: capitalize;
+    font-family: Poppins,sans-serif;
+}
+.modal-content, #caption {
+  animation-name: zoom;
+  animation-duration: 0.5s;
+}
+@keyframes zoom {
+  from {
+    transform:scale(0);
+  }
+  to {
+    transform:scale(1);
+  }
+}   
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+} 
+
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (max-width: 1025px ) {
   .container{
@@ -236,7 +309,7 @@
   }
 
   .project-description {
-    margin-bottom: 0px;
+    margin-bottom: auto;
   }
 
   .project-content {
@@ -270,6 +343,12 @@
 <script>
 import projectData from '../assets/data/projects.json'
 export default {
+  props:{
+    id:{
+      type:String,
+      required:false
+    }
+  },
   data() {
     return {
       current_project: {},
@@ -277,6 +356,9 @@ export default {
     }
   },
   created() {
+    if(this.id) {
+      this.current_id = this.id;
+    }
     this.current_project = projectData[this.current_id]
   },
   methods: {

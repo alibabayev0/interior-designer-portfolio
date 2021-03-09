@@ -25,6 +25,25 @@ body {
   background-color: #eeece5;
 }
 
+button,
+a { 
+  outline: none;
+}
+::-webkit-scrollbar {
+  width: 20px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #1c1c1d;
+  border-radius: 20px;
+  border: 6px solid transparent;
+  background-clip: content-box;
+}
+
 p {
   font-family: Poppins, sans-serif;
 }

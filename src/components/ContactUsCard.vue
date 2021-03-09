@@ -34,16 +34,24 @@
       <div class="att-1" />
       <ul>
         <li>
-          <img src="../assets/linkedin.svg" width="24" height="24" />
+          <a href="https://www.linkedin.com/in/gunaybabayeva/">
+            <img src="../assets/linkedin.svg" width="24" height="24" />
+          </a>
         </li>
         <li>
-          <img src="../assets/gmail-logo.svg" width="24" height="24" />
+          <a href="mailto:gunay.9r1@gmail.com">
+            <img src="../assets/gmail-logo.svg" width="24" height="24" />
+          </a>
         </li>
         <li>
-          <img src="../assets/instagram.svg" width="24" height="24" />
+          <a href="https://www.instagram.com/gunaybabayeva16/">
+            <img src="../assets/instagram.svg" width="24" height="24" />
+          </a>
         </li>
         <li>
-          <img src="../assets/phone.svg" width="24" height="24" />
+          <a href="tel:+994-50-243-44-00">
+            <img src="../assets/phone.svg" width="24" height="24" />
+          </a>
         </li>
       </ul>
       <div class="att-1" />

@@ -46,6 +46,7 @@
       </div>
     </div>
   </div>
+  <button class="download-cv"/>
 </template>
 
 <style scoped>
@@ -189,6 +190,23 @@
   margin-top: 15px;
   margin-left: 20px;
   text-align: left;
+}
+
+.download-cv {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  margin-right: 30px;
+  margin-bottom: 30px;
+  width: 70px;
+  height: 70px;
+  background: url("../assets/pdf.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 70% 80%;
+  border: 1px solid black;
+  border-radius: 40px;
+  outline: none;
 }
 
 @media (max-width: 768.98px) {

@@ -7,20 +7,14 @@
         "type":"Interior Design",   
         "owner":"Gunay Babayeva",   
         "profile":"https://safdie-staging.imgix.net/00deeabd-c11a-4b32-8139-ebe68dcf9c2b/00_H67-1011_09_16x9_B.jpg?fit=crop&crop=focal&q=70&ixlib=imgixjs-3.4.2",
-        "images": {
-            "living room": [
-                "https://safdie-staging.imgix.net/00deeabd-c11a-4b32-8139-ebe68dcf9c2b/00_H67-1011_09_16x9_B.jpg?fit=crop&crop=focal&q=70&ixlib=imgixjs-3.4.2",
-                "https://safdie-staging.imgix.net/00deeabd-c11a-4b32-8139-ebe68dcf9c2b/00_H67-1011_09_16x9_B.jpg?fit=crop&crop=focal&q=70&ixlib=imgixjs-3.4.2"
-            ],
-            "garden": [
-                "https://safdie-staging.imgix.net/00deeabd-c11a-4b32-8139-ebe68dcf9c2b/00_H67-1011_09_16x9_B.jpg?fit=crop&crop=focal&q=70&ixlib=imgixjs-3.4.2",
-                "https://safdie-staging.imgix.net/00deeabd-c11a-4b32-8139-ebe68dcf9c2b/00_H67-1011_09_16x9_B.jpg?fit=crop&crop=focal&q=70&ixlib=imgixjs-3.4.2"
-            ],
-            "outside": [
-                "https://safdie-staging.imgix.net/00deeabd-c11a-4b32-8139-ebe68dcf9c2b/00_H67-1011_09_16x9_B.jpg?fit=crop&crop=focal&q=70&ixlib=imgixjs-3.4.2",
-                "https://safdie-staging.imgix.net/00deeabd-c11a-4b32-8139-ebe68dcf9c2b/00_H67-1011_09_16x9_B.jpg?fit=crop&crop=focal&q=70&ixlib=imgixjs-3.4.2"
-            ]
-        }
+        "images": [
+            "https://safdie-staging.imgix.net/00deeabd-c11a-4b32-8139-ebe68dcf9c2b/00_H67-1011_09_16x9_B.jpg?fit=crop&crop=focal&q=70&ixlib=imgixjs-3.4.2",
+            "https://safdie-staging.imgix.net/00deeabd-c11a-4b32-8139-ebe68dcf9c2b/00_H67-1011_09_16x9_B.jpg?fit=crop&crop=focal&q=70&ixlib=imgixjs-3.4.2",
+            "https://safdie-staging.imgix.net/00deeabd-c11a-4b32-8139-ebe68dcf9c2b/00_H67-1011_09_16x9_B.jpg?fit=crop&crop=focal&q=70&ixlib=imgixjs-3.4.2",
+            "https://safdie-staging.imgix.net/00deeabd-c11a-4b32-8139-ebe68dcf9c2b/00_H67-1011_09_16x9_B.jpg?fit=crop&crop=focal&q=70&ixlib=imgixjs-3.4.2",
+            "https://safdie-staging.imgix.net/00deeabd-c11a-4b32-8139-ebe68dcf9c2b/00_H67-1011_09_16x9_B.jpg?fit=crop&crop=focal&q=70&ixlib=imgixjs-3.4.2",
+            "https://safdie-staging.imgix.net/00deeabd-c11a-4b32-8139-ebe68dcf9c2b/00_H67-1011_09_16x9_B.jpg?fit=crop&crop=focal&q=70&ixlib=imgixjs-3.4.2"
+        ]
     },
     {
         "name": "Test 2",
@@ -30,23 +24,10 @@
         "type":"Interior Design",   
         "owner":"Gunay Babayeva",  
         "profile":"https://safdie-staging.imgix.net/00deeabd-c11a-4b32-8139-ebe68dcf9c2b/00_H67-1011_09_16x9_B.jpg?fit=crop&crop=focal&q=70&ixlib=imgixjs-3.4.2",
-        "images": {
-            "living room": [
-                "https://safdie-staging.imgix.net/00deeabd-c11a-4b32-8139-ebe68dcf9c2b/00_H67-1011_09_16x9_B.jpg?fit=crop&crop=focal&q=70&ixlib=imgixjs-3.4.2",
-                "https://safdie-staging.imgix.net/00deeabd-c11a-4b32-8139-ebe68dcf9c2b/00_H67-1011_09_16x9_B.jpg?fit=crop&crop=focal&q=70&ixlib=imgixjs-3.4.2",
-                "https://safdie-staging.imgix.net/00deeabd-c11a-4b32-8139-ebe68dcf9c2b/00_H67-1011_09_16x9_B.jpg?fit=crop&crop=focal&q=70&ixlib=imgixjs-3.4.2",
-                "https://safdie-staging.imgix.net/00deeabd-c11a-4b32-8139-ebe68dcf9c2b/00_H67-1011_09_16x9_B.jpg?fit=crop&crop=focal&q=70&ixlib=imgixjs-3.4.2"
-            ],
-            "garden": [
-                "https://safdie-staging.imgix.net/00deeabd-c11a-4b32-8139-ebe68dcf9c2b/00_H67-1011_09_16x9_B.jpg?fit=crop&crop=focal&q=70&ixlib=imgixjs-3.4.2",
-                "https://safdie-staging.imgix.net/00deeabd-c11a-4b32-8139-ebe68dcf9c2b/00_H67-1011_09_16x9_B.jpg?fit=crop&crop=focal&q=70&ixlib=imgixjs-3.4.2",
-                "https://safdie-staging.imgix.net/00deeabd-c11a-4b32-8139-ebe68dcf9c2b/00_H67-1011_09_16x9_B.jpg?fit=crop&crop=focal&q=70&ixlib=imgixjs-3.4.2"
-            ],
-            "outside": [
-                "https://safdie-staging.imgix.net/00deeabd-c11a-4b32-8139-ebe68dcf9c2b/00_H67-1011_09_16x9_B.jpg?fit=crop&crop=focal&q=70&ixlib=imgixjs-3.4.2",
-                "https://safdie-staging.imgix.net/00deeabd-c11a-4b32-8139-ebe68dcf9c2b/00_H67-1011_09_16x9_B.jpg?fit=crop&crop=focal&q=70&ixlib=imgixjs-3.4.2"
-            ]
-        }
+        "images": [
+            "https://safdie-staging.imgix.net/00deeabd-c11a-4b32-8139-ebe68dcf9c2b/00_H67-1011_09_16x9_B.jpg?fit=crop&crop=focal&q=70&ixlib=imgixjs-3.4.2",
+            "https://safdie-staging.imgix.net/00deeabd-c11a-4b32-8139-ebe68dcf9c2b/00_H67-1011_09_16x9_B.jpg?fit=crop&crop=focal&q=70&ixlib=imgixjs-3.4.2"
+        ]
     },
     {
         "name": "Test 3",
@@ -56,30 +37,15 @@
         "type":"Interior Design",   
         "owner":"Gunay Babayeva",   
         "profile":"https://safdie-staging.imgix.net/00deeabd-c11a-4b32-8139-ebe68dcf9c2b/00_H67-1011_09_16x9_B.jpg?fit=crop&crop=focal&q=70&ixlib=imgixjs-3.4.2",
-        "images": {
-            "living room": [
-                "https://safdie-staging.imgix.net/00deeabd-c11a-4b32-8139-ebe68dcf9c2b/00_H67-1011_09_16x9_B.jpg?fit=crop&crop=focal&q=70&ixlib=imgixjs-3.4.2",
-                "https://safdie-staging.imgix.net/00deeabd-c11a-4b32-8139-ebe68dcf9c2b/00_H67-1011_09_16x9_B.jpg?fit=crop&crop=focal&q=70&ixlib=imgixjs-3.4.2",
-                "https://safdie-staging.imgix.net/00deeabd-c11a-4b32-8139-ebe68dcf9c2b/00_H67-1011_09_16x9_B.jpg?fit=crop&crop=focal&q=70&ixlib=imgixjs-3.4.2",
-                "https://safdie-staging.imgix.net/00deeabd-c11a-4b32-8139-ebe68dcf9c2b/00_H67-1011_09_16x9_B.jpg?fit=crop&crop=focal&q=70&ixlib=imgixjs-3.4.2",
-                "https://safdie-staging.imgix.net/00deeabd-c11a-4b32-8139-ebe68dcf9c2b/00_H67-1011_09_16x9_B.jpg?fit=crop&crop=focal&q=70&ixlib=imgixjs-3.4.2"
-            ],
-            "garden": [
-                "https://safdie-staging.imgix.net/00deeabd-c11a-4b32-8139-ebe68dcf9c2b/00_H67-1011_09_16x9_B.jpg?fit=crop&crop=focal&q=70&ixlib=imgixjs-3.4.2",
-                "https://safdie-staging.imgix.net/00deeabd-c11a-4b32-8139-ebe68dcf9c2b/00_H67-1011_09_16x9_B.jpg?fit=crop&crop=focal&q=70&ixlib=imgixjs-3.4.2",
-                "https://safdie-staging.imgix.net/00deeabd-c11a-4b32-8139-ebe68dcf9c2b/00_H67-1011_09_16x9_B.jpg?fit=crop&crop=focal&q=70&ixlib=imgixjs-3.4.2",
-                "https://safdie-staging.imgix.net/00deeabd-c11a-4b32-8139-ebe68dcf9c2b/00_H67-1011_09_16x9_B.jpg?fit=crop&crop=focal&q=70&ixlib=imgixjs-3.4.2",
-                "https://safdie-staging.imgix.net/00deeabd-c11a-4b32-8139-ebe68dcf9c2b/00_H67-1011_09_16x9_B.jpg?fit=crop&crop=focal&q=70&ixlib=imgixjs-3.4.2",
-                "https://safdie-staging.imgix.net/00deeabd-c11a-4b32-8139-ebe68dcf9c2b/00_H67-1011_09_16x9_B.jpg?fit=crop&crop=focal&q=70&ixlib=imgixjs-3.4.2"
-            ],
-            "outside": [
-                "https://safdie-staging.imgix.net/00deeabd-c11a-4b32-8139-ebe68dcf9c2b/00_H67-1011_09_16x9_B.jpg?fit=crop&crop=focal&q=70&ixlib=imgixjs-3.4.2",
-                "https://safdie-staging.imgix.net/00deeabd-c11a-4b32-8139-ebe68dcf9c2b/00_H67-1011_09_16x9_B.jpg?fit=crop&crop=focal&q=70&ixlib=imgixjs-3.4.2",
-                "https://safdie-staging.imgix.net/00deeabd-c11a-4b32-8139-ebe68dcf9c2b/00_H67-1011_09_16x9_B.jpg?fit=crop&crop=focal&q=70&ixlib=imgixjs-3.4.2",
-                "https://safdie-staging.imgix.net/00deeabd-c11a-4b32-8139-ebe68dcf9c2b/00_H67-1011_09_16x9_B.jpg?fit=crop&crop=focal&q=70&ixlib=imgixjs-3.4.2",
-                "https://safdie-staging.imgix.net/00deeabd-c11a-4b32-8139-ebe68dcf9c2b/00_H67-1011_09_16x9_B.jpg?fit=crop&crop=focal&q=70&ixlib=imgixjs-3.4.2",
-                "https://safdie-staging.imgix.net/00deeabd-c11a-4b32-8139-ebe68dcf9c2b/00_H67-1011_09_16x9_B.jpg?fit=crop&crop=focal&q=70&ixlib=imgixjs-3.4.2"
-            ]
-        }
+        "images": [
+            "https://safdie-staging.imgix.net/00deeabd-c11a-4b32-8139-ebe68dcf9c2b/00_H67-1011_09_16x9_B.jpg?fit=crop&crop=focal&q=70&ixlib=imgixjs-3.4.2",
+            "https://safdie-staging.imgix.net/00deeabd-c11a-4b32-8139-ebe68dcf9c2b/00_H67-1011_09_16x9_B.jpg?fit=crop&crop=focal&q=70&ixlib=imgixjs-3.4.2",
+            "https://safdie-staging.imgix.net/00deeabd-c11a-4b32-8139-ebe68dcf9c2b/00_H67-1011_09_16x9_B.jpg?fit=crop&crop=focal&q=70&ixlib=imgixjs-3.4.2",
+            "https://safdie-staging.imgix.net/00deeabd-c11a-4b32-8139-ebe68dcf9c2b/00_H67-1011_09_16x9_B.jpg?fit=crop&crop=focal&q=70&ixlib=imgixjs-3.4.2",
+            "https://safdie-staging.imgix.net/00deeabd-c11a-4b32-8139-ebe68dcf9c2b/00_H67-1011_09_16x9_B.jpg?fit=crop&crop=focal&q=70&ixlib=imgixjs-3.4.2",
+            "https://safdie-staging.imgix.net/00deeabd-c11a-4b32-8139-ebe68dcf9c2b/00_H67-1011_09_16x9_B.jpg?fit=crop&crop=focal&q=70&ixlib=imgixjs-3.4.2",
+            "https://safdie-staging.imgix.net/00deeabd-c11a-4b32-8139-ebe68dcf9c2b/00_H67-1011_09_16x9_B.jpg?fit=crop&crop=focal&q=70&ixlib=imgixjs-3.4.2",
+            "https://safdie-staging.imgix.net/00deeabd-c11a-4b32-8139-ebe68dcf9c2b/00_H67-1011_09_16x9_B.jpg?fit=crop&crop=focal&q=70&ixlib=imgixjs-3.4.2"
+        ]
     }
 ]

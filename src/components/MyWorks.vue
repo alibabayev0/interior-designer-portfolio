@@ -26,7 +26,9 @@
               </p>
             </div>
             <button class="read-more">
-              Read More <img src="../assets/arrow.svg" />
+              <router-link :to="{ name:'Works',  params: { id:index}}">
+                Read More <img src="../assets/arrow.svg" />
+              </router-link>
             </button>
           </div>
           <div class="right-column">
@@ -150,11 +152,6 @@
 }
 
 .left-column .read-more {
-  display: flex;
-  justify-self: flex-end;
-  flex-direction: row;
-  justify-items: center;
-  align-items: center;
   cursor: pointer;
   width: 100px;
   background: transparent;
@@ -169,6 +166,16 @@
   height: 20px;
   margin-left: 5px;
   transform: rotate(180deg);
+}
+
+.read-more a {
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  flex-direction: row;
+  text-decoration: none;
+  color:white;
+  outline: none;
 }
 
 .right-column {

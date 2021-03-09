@@ -11,7 +11,8 @@ const routes = [
   {
     path: '/works',
     name: 'Works',
-    component: Works
+    component: Works,
+    props:true
   },
   {
     path: '/about',
@@ -26,7 +27,14 @@ const routes = [
 
 const router = createRouter({
   history: createWebHashHistory(),
-  routes
+  routes,
+  // eslint-disable-next-line no-unused-vars
+  scrollBehavior(to, from, savedPosition) {
+    // always scroll to top
+    return {
+       top: 0
+    }
+  },
 })
 
 export default router
