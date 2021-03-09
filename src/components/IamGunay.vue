@@ -3,14 +3,14 @@
     <div class="left-column">
       <p class="att-1">20' x 21'</p>
       <div class="att-2">
-        <div class="att-arrow att-arrow-up-triangle"/>
-        <div class="att-arrow-up-line"/>
+        <div class="att-arrow att-arrow-up-triangle" />
+        <div class="att-arrow-up-line" />
         <p class="att-text">24</p>
-        <div class="att-arrow-down-line" /> 
-        <div class="att-arrow att-arrow-down-triangle"/>
+        <div class="att-arrow-down-line" />
+        <div class="att-arrow att-arrow-down-triangle" />
       </div>
       <div class="left-column-text">
-        <p class="main-text">Hi,<br>I'am Gunay</p>
+        <p class="main-text">Hi,<br />I'am Gunay</p>
         <p class="main-text-desc">INTERIOR DESIGNER</p>
         <p class="main-text-intro">Welcome to my Personal Website...</p>
       </div>
@@ -23,14 +23,12 @@
     </div>
 
     <div class="right-column">
-      <img src="../assets/circle-cropped.png"/>
+      <img src="../assets/circle-cropped.png" />
     </div>
-
   </div>
 </template>
 
 <style lang="css" scoped>
-
 * {
   padding: 0;
   margin: 0;
@@ -42,7 +40,7 @@
   flex-direction: row;
 }
 
-.left-column { 
+.left-column {
   display: flex;
   position: relative;
   flex-direction: column;
@@ -52,27 +50,27 @@
   padding: 10em 3em 10em 3em;
 }
 
-.left-column-text{
+.left-column-text {
   margin-left: 40px;
 }
 
 .left-column .main-text-desc {
-  color: #928C00;
+  color: #928c00;
   font-size: 1.3em;
-  font-family: Poppins,sans-serif;
+  font-family: Poppins, sans-serif;
 }
 
 .left-column .main-text {
-  color: #1C1C1D;
+  color: #1c1c1d;
   font-size: 4em;
   font-weight: 900;
-  font-family: Poppins,sans-serif;
+  font-family: Poppins, sans-serif;
   line-height: 60px;
   margin: 10px 0 30px 0;
 }
 
 .left-column .main-text-intro {
-  font-family: Poppins,sans-serif;
+  font-family: Poppins, sans-serif;
   font-size: 2em;
 }
 
@@ -83,7 +81,7 @@
   border-left: 1px solid black;
   border-right: 1px solid black;
   flex-grow: 2;
-  max-width:500px;
+  max-width: 500px;
   margin-right: 3em;
   /* background:url(
 data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAMklEQVQoU2NkwA/+M+KR/8/AwMCISwFYEqQZmwK4JDYFKJLoCjAkkRVglYQpwCkJUgAAGOQICDcTvB4AAAAASUVORK5CYII=
@@ -100,21 +98,20 @@ data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAMklEQVQoU2
 }
 
 .att-1 {
-  display:block;
+  display: block;
   position: absolute;
   right: 0px;
-  top:0px;
+  top: 0px;
   padding: 10px 10px 10px 10px;
   text-align: center;
-  font-family: Poppins,sans-serif;
+  font-family: Poppins, sans-serif;
   border-left: 1px solid black;
   border-bottom: 1px solid black;
-
 }
 
 .att-2 {
   position: absolute;
-  left:2em;
+  left: 2em;
   margin-right: 2em;
 }
 
@@ -123,16 +120,16 @@ data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAMklEQVQoU2
   height: 7em;
   margin-bottom: 0.9em;
   margin-left: 0.95em;
-  background-color: #1C1C1D;
+  background-color: #1c1c1d;
 }
 
-.att-2 .att-arrow-up-triangle{
+.att-2 .att-arrow-up-triangle {
   transform: rotate(-135deg);
   -webkit-transform: rotate(-135deg);
   margin-bottom: -0.55em;
 }
 
-.att-arrow{ 
+.att-arrow {
   border: solid black;
   border-width: 0 2.5px 2.5px 0;
   padding: 3px;
@@ -140,7 +137,7 @@ data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAMklEQVQoU2
   margin-left: 11.5px;
 }
 
-.att-2 .att-arrow-down-triangle{
+.att-2 .att-arrow-down-triangle {
   transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
   position: absolute;
@@ -152,16 +149,14 @@ data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAMklEQVQoU2
   height: 7em;
   margin-top: 15px;
   margin-left: 15px;
-  background-color: #1C1C1D;
+  background-color: #1c1c1d;
 }
-
-
 
 .att-2 .att-text {
   transform: rotate(-90deg);
   font-size: 1em;
   margin-left: 0.3em;
-  font-family: Poppins,sans-serif;
+  font-family: Poppins, sans-serif;
 }
 /* 
 .att-3 {
@@ -183,52 +178,47 @@ data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAMklEQVQoU2
   margin-top: 19px;
 } */
 
-@media (max-width: 575.98px) { 
- .left-column {
+@media (max-width: 575.98px) {
+  .left-column {
     padding: 10% 10% 10% 10%;
     border-bottom: 1px solid black;
   }
 
   .left-column .main-text-desc {
-    color: #928C00;
+    color: #928c00;
     font-size: 1.3em;
-    font-family: Poppins,sans-serif;
+    font-family: Poppins, sans-serif;
   }
 
   .left-column .main-text {
-    color: #1C1C1D;
+    color: #1c1c1d;
     font-size: 3em;
     font-weight: 900;
-    font-family: Poppins,sans-serif;
+    font-family: Poppins, sans-serif;
     line-height: 60px;
     margin: 10px 0 30px 0;
   }
 
   .left-column .main-text-intro {
-    font-family: Poppins,sans-serif;
+    font-family: Poppins, sans-serif;
     font-size: 1.5em;
   }
 }
 
- /* Small devices (landscape phones, less than 768px) */
-@media (max-width: 767.98px) { 
-
+/* Small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {
 }
 
 /* // Medium devices (tablets, less than 992px) */
-@media (max-width: 991.98px) { 
-  
+@media (max-width: 991.98px) {
 }
 
 /* // Large devices (desktops, less than 1200px) */
-@media (max-width: 1265.98px) { 
-   .right-column {
+@media (max-width: 1265.98px) {
+  .right-column {
     display: none;
   }
 }
-
 </style>
 
-<script>
-
-</script>
+<script></script>

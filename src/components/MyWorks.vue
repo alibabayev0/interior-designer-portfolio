@@ -1,190 +1,204 @@
 <template>
-    <div class="container">
-        <div class="header">
-            <p>My last works</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, illo voluptatum. Reiciendis ratione, fuga et aperiam ex quasi quaerat</p>
-        </div>
-        <div class="projects">
-            <div class="card" 
-                v-for="(item,index) in items"
-                :key="index"  
-                :style="{ 'background-image': 'url('+ item.image+')' }">
-                    <div class="bg-change">
-                        <div class="left-column">
-                            <div class="card-info">
-                                <p class="card-name">Dream Oppen</p>
-                                <p class="card-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia architecto molestias assumenda neque quibusdam, rem quod explicabo eveniet, laborum soluta unde, magnam ipsum nemo provident sint laboriosam! Dolores, ex obcaecati.</p>
-                            </div>
-                            <button class="read-more">Read More <img src="../assets/arrow.svg"/></button>
-                        </div>
-                        <div class="right-column">
-                            <p class="floor-count">3 floors</p>
-                            <p class="area"><img src="../assets/area.svg" width="20" height="20"/>152 m2</p>
-                        </div>
-                    </div>
-            </div>
-        </div>
+  <div class="container">
+    <div class="header">
+      <p>My last works</p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, illo
+        voluptatum. Reiciendis ratione, fuga et aperiam ex quasi quaerat
+      </p>
     </div>
+    <div class="projects">
+      <div
+        class="card"
+        v-for="(item, index) in items"
+        :key="index"
+        :style="{ 'background-image': 'url(' + item.image + ')' }"
+      >
+        <div class="bg-change">
+          <div class="left-column">
+            <div class="card-info">
+              <p class="card-name">Dream Oppen</p>
+              <p class="card-description">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Mollitia architecto molestias assumenda neque quibusdam, rem
+                quod explicabo eveniet, laborum soluta unde, magnam ipsum nemo
+                provident sint laboriosam! Dolores, ex obcaecati.
+              </p>
+            </div>
+            <button class="read-more">
+              Read More <img src="../assets/arrow.svg" />
+            </button>
+          </div>
+          <div class="right-column">
+            <p class="floor-count">3 floors</p>
+            <p class="area">
+              <img src="../assets/area.svg" width="20" height="20" />152 m2
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
 
 <style scoped>
-
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 .container {
-    display: flex;
-    flex-direction: column;
-    padding-bottom: 4em;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 4em;
 }
 
 .header {
-    display:flex;
-    flex-direction: column;
-    align-items:center;
-    padding: 0 2em 0 2em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 2em 0 2em;
 }
 
 .header p:first-child {
-    margin-top: 2.5em;
-    margin-bottom: 0.5em;
-    font-size: 2em;
+  margin-top: 2.5em;
+  margin-bottom: 0.5em;
+  font-size: 2em;
 }
 .header p:last-child {
-    font-size: 1em;
-    font-weight: 300;
+  font-size: 1em;
+  font-weight: 300;
 }
 
 .projects {
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: 6em;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 6em;
 }
 
 .card {
-    flex-grow: 1;
-    display: block;
-    width: calc(100% / 3 - 2px);
-    width: 400px;
-    height: 27vw;
-    min-height: 350px;
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
+  flex-grow: 1;
+  display: block;
+  width: calc(100% / 3 - 2px);
+  width: 400px;
+  height: 27vw;
+  min-height: 350px;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
 }
 
 /* This code gives big size which is first item in works container */
-.card:first-child{
-    flex-grow: 3;
-    width: calc(100% - (100% / 3) - 8px);
+.card:first-child {
+  flex-grow: 3;
+  width: calc(100% - (100% / 3) - 8px);
 }
 
 .card:first-child .left-column {
-    max-width: 80%;
+  max-width: 80%;
 }
 
-.card:hover .left-column{
-    max-height: 85%;
+.card:hover .left-column {
+  max-height: 85%;
 }
 
 .card-info .card-description {
-    display: none;
+  display: none;
 }
 
-.card:hover .card-info .card-description{
-    display: inline;
+.card:hover .card-info .card-description {
+  display: inline;
 }
 
-.card:hover .bg-change{
-    background-color: rgba(0,0,0,0.65);
+.card:hover .bg-change {
+  background-color: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(5px);
 }
 
-.bg-change{
-    display: flex;
-    width: 100%;
-    height: 100%;
-    transition: 0.3s background-color;
+.bg-change {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: 0.3s background-color;
 }
 
 .left-column {
-    display: flex;
-    flex-direction: column;
-    justify-self: flex-start;
-    align-self: flex-end;  
-    margin-bottom: 35px;
-    margin-left: 35px;
-    max-width: 60%;
-    flex-grow:1;
-    transition: 20s all;
+  display: flex;
+  flex-direction: column;
+  justify-self: flex-start;
+  align-self: flex-end;
+  margin-bottom: 35px;
+  margin-left: 35px;
+  max-width: 60%;
+  flex-grow: 1;
+  transition: 20s all;
 }
 
 /* P - is area and floors-count classes */
-.left-column .card-info, .right-column p{
-    flex: 1;
-    font-size: 1.3em;
-    color:white
+.left-column .card-info,
+.right-column p {
+  flex: 1;
+  font-size: 1.3em;
+  color: white;
 }
 
 .left-column .card-description {
-    font-size: 0.7em;
+  font-size: 0.7em;
 }
 
 .left-column .card-info {
-    margin-bottom: 15px;
+  margin-bottom: 15px;
 }
 
 .left-column .read-more {
-    display: flex;
-    justify-self: flex-end;
-    flex-direction: row;
-    justify-items: center;
-    align-items: center;
-    cursor: pointer;
-    width: 100px;
-    background: transparent;
-    border: 0;
-    border-bottom: 1px solid #928C00;
-    color:white;
-    order: 2s;
+  display: flex;
+  justify-self: flex-end;
+  flex-direction: row;
+  justify-items: center;
+  align-items: center;
+  cursor: pointer;
+  width: 100px;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #928c00;
+  color: white;
+  order: 2s;
 }
 
 .left-column .read-more img {
-    width: 20px;
-    height: 20px;
-    margin-left: 5px;
-    transform: rotate(180deg);
-}
- 
-.right-column {
-    display: flex;
-    flex-direction: column;
-    justify-self: flex-end;
-    align-self: flex-end;
-    justify-items: flex-end;
-    align-items: flex-end;
-    margin-bottom: 35px;
-    margin-right: 35px;
-    flex-grow:1;
+  width: 20px;
+  height: 20px;
+  margin-left: 5px;
+  transform: rotate(180deg);
 }
 
-.right-column .floor-count { 
-    margin-bottom: 15px;
-    font-size: 0.9em;
+.right-column {
+  display: flex;
+  flex-direction: column;
+  justify-self: flex-end;
+  align-self: flex-end;
+  justify-items: flex-end;
+  align-items: flex-end;
+  margin-bottom: 35px;
+  margin-right: 35px;
+  flex-grow: 1;
+}
+
+.right-column .floor-count {
+  margin-bottom: 15px;
+  font-size: 0.9em;
 }
 
 .right-column .area {
-    display: flex;
-    flex-direction: row;
-    justify-items: center;
-    align-items: center;
-    font-size: 1em;
+  display: flex;
+  flex-direction: row;
+  justify-items: center;
+  align-items: center;
+  font-size: 1em;
 }
 
-.right-column .area img{
-    margin-right: 10px;
-} 
-
+.right-column .area img {
+  margin-right: 10px;
+}
 </style>
 
 <script>
@@ -194,32 +208,31 @@ import backgroundUrl3 from '../assets/item-3.jpg'
 import backgroundUrl4 from '../assets/item-4.jpg'
 import backgroundUrl5 from '../assets/item-5.jpg'
 export default {
-    data() {
-        return {
-            items: [
-                { 
-                    message: 'Foo',
-                    image: backgroundUrl1
-                },
-                { 
-                    message: 'Bar',
-                    image: backgroundUrl2
-
-                },
-                { 
-                    message: 'Bar',
-                    image: backgroundUrl3
-                },
-                { 
-                    message: 'Bar',
-                    image: backgroundUrl4
-                },
-                { 
-                    message: 'Bar',
-                    image: backgroundUrl5
-                }
-            ]
+  data() {
+    return {
+      items: [
+        {
+          message: 'Foo',
+          image: backgroundUrl1
+        },
+        {
+          message: 'Bar',
+          image: backgroundUrl2
+        },
+        {
+          message: 'Bar',
+          image: backgroundUrl3
+        },
+        {
+          message: 'Bar',
+          image: backgroundUrl4
+        },
+        {
+          message: 'Bar',
+          image: backgroundUrl5
         }
+      ]
     }
+  }
 }
 </script>

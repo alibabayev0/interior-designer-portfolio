@@ -1,14 +1,14 @@
 <template>
   <Header />
   <router-view />
-  <Footer/>
+  <Footer />
 </template>
 
 <script>
 import Header from './components/Header'
 import Footer from './components/Copyright'
 export default {
-  components:{
+  components: {
     Header,
     Footer
   }
@@ -18,15 +18,14 @@ export default {
 <style lang="css">
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;800&display=swap');
 
-
-html,body {
+html,
+body {
   margin: 0px !important;
   padding: 0px !important;
-  background-color: #EEECE5;
+  background-color: #eeece5;
 }
 
 p {
-  font-family: Poppins,sans-serif;
+  font-family: Poppins, sans-serif;
 }
-
 </style>

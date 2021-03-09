@@ -1,145 +1,230 @@
 <template>
-     <div class="att-container">
-        <div class="att-first-up-line"/>
-        <div class="att-second-up-line"/>
+  <div class="container">
+    <div class="column-1 lc">
+      <div class="profile-col">
+        <img id="profile2" src="../assets/bctmuhwgee.jpg" alt="nothing" />
+        <img id="profile" src="../assets/ngcxixrqph.jpg" alt="nothing" />
+      </div>
     </div>
-    <div class="view">
-        <div class="container">
-            <p class="header">About me</p>
-            <p class="description">I am an interior designer with 3+ years professional experience. Project management skills, strong background in space planning, technical drawing, knowledge of FF&E, 10 different design programs and being advanced speaker of 5 foreign languages make easier creation and presentation of my projects. As an interior designer, I always work on the new technologies and advanced techniques, trying to be inventive to make each pixel unique in every project I do. </p>
-            <button class="read-more">
-                READ MORE
-                <img src="../assets/right-arrow.svg"/>
-            </button>
+    <div class="column-1 rc">
+      <div class="info">
+        <div class="header">
+          <p>About</p>
+          <span></span>
         </div>
+        <div class="description">
+          I am an interior designer with 3+ years professional experience.
+          Project management skills, strong background in space planning,
+          technical drawing, knowledge of FF&E, 10 different design programs and
+          being advanced speaker of 5 foreign languages make easier creation and
+          presentation of my projects. As an interior designer, I always work on
+          the new technologies and advanced techniques, trying to be inventive
+          to make each pixel unique in every project I do.
+        </div>
+      </div>
     </div>
-    <div class="att-container">
-        <div class="att-first-down-line"/>
-        <div class="att-second-down-line"/>
+  </div>
+  <div class="main">
+    <div class="card education" v-for="(subjects, index) in gunay" :key="index">
+      <div class="card-header">
+        <p>{{subjects.name}}</p>
+        <span></span>
+      </div>
+      <div class="card-main" v-for="(experiences,index) in subjects.info" :key="index">
+        <div class="column-info">
+          <p v-if="experiences.location" class="name name-weight">{{experiences.name}}</p>
+          <p v-else class="name">{{experiences.name}}</p>
+          <p>{{experiences.location}}</p>
+
+          <ul v-for="(info,index) in experiences.more_info" :key="index">
+            <li>
+              <p>{{info}}</p>
+            </li>
+          </ul>
+        </div>
+        <p class="date">{{experiences.date}}</p>
+      </div>
     </div>
+  </div>
 </template>
 
-<style lang="css" scoped>
+<style scoped>
 * {
-    margin:0;
-    padding:0;
+  margin: 0;
+  padding: 0;
+  font-family: Poppins, sans-serif;
 }
-
-.view{
-    padding: 0 13% 0% 13%;
-}
-
-.att-container {
-    display: flex;
-    width: 100%;
-    height: 50px;
-    justify-content: space-between;
-}
-
-.att-first-up-line, .att-second-up-line{
-    flex:1;
-}
-
-.att-first-up-line {
-    height: 50px;
-    width: 1px;
-    border:1px dashed black;
-    border-left: 0;
-    border-top: 0;
-    max-width: calc(13%);
-}
-
-.att-second-up-line {
-    height: 50px;
-    max-width: calc(13%);
-    border:1px dashed black;
-    border-right: 0;
-    border-top: 0;
-}
-
-.att-first-down-line, .att-second-down-line{
-    flex:1;
-}
-
-.att-first-down-line {
-    height: 50px;
-    border:1px dashed black;
-    border-left: 0;
-    border-bottom: 0;
-    margin-top: -1px;
-    max-width: calc(13%);
-}
-
-.att-second-down-line {
-    height: 50px;
-    max-width: calc(13%);
-    margin-top: -1px;
-    border:1px dashed black;
-    border-right: 0;
-    border-bottom: 0;
+.container,
+.main {
+  margin: 3% 10% 0% 5%;
 }
 
 .container {
-    display: flex;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.column-1 {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.lc {
+  align-items: center;
+}
+
+.rc {
+  justify-content: center;
+}
+
+.profile-col {
+  position: relative;
+  min-height: 400px;
+  min-width: 260.25px;
+  border: 3px solid #928c00;
+  padding: 5px 10px 5px 10px;
+}
+
+.column-1 .header {
+  flex: 1;
+}
+
+.column-1 .description {
+  flex: 1;
+  text-align: justify;
+}
+
+#profile {
+  position: absolute;
+  max-height: 400px;
+  transform: rotate(5deg);
+  -webkit-transition: opacity 0.25s ease-in-out;
+  -moz-transition: opacity 0.25s ease-in-out;
+  -o-transition: opacity 0.25s ease-in-out;
+  transition: opacity 0.25s ease-in-out;
+}
+
+#profile:hover {
+  opacity: 0;
+}
+
+#profile2 {
+  position: absolute;
+  max-height: 400px;
+  transform: rotate(5deg);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  font-size: 1.5em;
+  font-weight: 900;
+  color:#928c00;
+  margin-bottom: 30px;
+}
+
+.header span {
+  width: 40px;
+  margin-left: 15px;
+  height: 2px;
+  background-color: black;
+}
+
+.left-container {
+  flex: 1;
+}
+
+.card-header {
+  display: flex;
+  text-transform: uppercase;
+}
+
+.card-header p {
+  font-size: 1.7em;
+  font-weight: 700;
+  color: #928c00;
+}
+
+.card-header span {
+  margin-left: 15px;
+  height: 2px;
+  margin: auto;
+  margin-left: 25px;
+  background-color: #b8b8b8;
+  flex-grow: 1;
+}
+
+.card-main {
+  display: flex;
+  flex-direction: row;
+  margin-top: 14px;
+  margin-bottom: 14px;
+  padding: 3px;
+}
+
+.card-main .date {
+  text-align: end;
+  flex: 1;
+}
+
+.card-main .column-info {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-left: 10px;
+  border-left: 4px solid #b8b8b8;
+}
+
+.card-main .column-info .name {
+  font-size: 1.2em;
+}
+
+.name-weight{
+  font-weight: 700;
+}
+
+.card-main .column-info ul {
+  margin-top: 15px;
+  margin-left: 20px;
+  text-align: left;
+}
+
+@media (max-width: 768.98px) {
+}
+
+@media (max-width: 768.98px) {
+  .container {
     flex-direction: column;
-    border: 1px dashed black;
-    padding: 5%;
-}
-
- 
-.container .header{
-    font-size: 2em;
-    font-family: Poppins,sans-serif;
-    font-weight: 600;
-    border-bottom: 1px solid #1c1c1d;
-}
-
-
-.container .description{
-    margin-top: 30px;
-    font-family: Poppins,sans-serif;
-}
-
-.container .read-more{
-    display: flex;
     justify-content: center;
-    align-items: center;
-    border: 0;
-    background-color: transparent;
-    color: black;
-    width: 140px;
-    height: 60px;
-    align-self: flex-end;
-    margin-top: 20px;
-    margin-right: 10px;
-    font-size: 1em;
-    font-family: Poppins,sans-serif;
-    border: 1px solid black;
-    cursor: pointer;
-    transition: transform .3s;
+    margin: 3% 1em 0% 1em;
+    margin-top: 40px;
+  }
+
+  .main {
+    margin: 3% 2em 0% 2em;
+  }
+
+  .rc {
+    margin: 40px 1em 0% 1em;
+  }
 }
-
-.container .read-more:hover {
-    transform: rotate(-10deg);
-}
-
-.container .read-more img {
-    width: 20px;
-    height: 20px;
-    margin-left: 8px;
-}
-
-/* 
-.about .header {
-    font-size: 3em;
-    font-family: Poppins,sans-serif;
-    margin:0;
-} */
-
 </style>
 
 <script>
+
+import portfolio from '../assets/data/portfolio.json';
+
 export default {
-    
+  data() {
+    return {
+       gunay: portfolio
+    }
+  },
+  created() {
+    console.log(this.gunay);
+  }
 }
+
 </script>

@@ -1,16 +1,14 @@
 <template>
-    <portfolio></portfolio>
+  <portfolio></portfolio>
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>
 
 <script>
 import Portfolio from '../components/Portfolio.vue'
 export default {
-    components:{
-        Portfolio
-    }
+  components: {
+    Portfolio
+  }
 }
 </script>
