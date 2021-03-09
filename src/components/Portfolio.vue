@@ -305,6 +305,7 @@
   .project-info {
     position: static;
     width: auto;
+    min-height: 0;
     max-height: none;
   }
 
@@ -333,6 +334,10 @@
 
   .project-item:last-of-type{
     padding-bottom: 30px;
+  }
+
+  .project-nav {
+    margin-top: 30px;
   }
 
 }

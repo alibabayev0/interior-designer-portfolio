@@ -48,6 +48,8 @@
   align-items: center;
   flex-grow: 2;
   padding: 10em 3em 10em 3em;
+  background-image:  linear-gradient(#b8b8b8 1.2000000000000002px, transparent 1.2000000000000002px), linear-gradient(to right, #b8b8b8 1.2000000000000002px, transparent 1.2000000000000002px);
+  background-size: 24px 24px;
 }
 
 .left-column-text {
@@ -83,6 +85,9 @@
   flex-grow: 2;
   max-width: 500px;
   margin-right: 3em;
+  -webkit-box-shadow: -14px 3px 52px -26px #0000007a;
+  -moz-box-shadow: -14px 3px 52px -26px #0000007a;
+  box-shadow: -14px 3px 52px -26px #0000007a;
   /* background:url(
 data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAMklEQVQoU2NkwA/+M+KR/8/AwMCISwFYEqQZmwK4JDYFKJLoCjAkkRVglYQpwCkJUgAAGOQICDcTvB4AAAAASUVORK5CYII=
    ) repeat; */

@@ -37,6 +37,7 @@
 
 .view {
   padding: 0 13% 0% 13%;
+  
 }
 
 .att-container {
