@@ -139,22 +139,21 @@
 .card-header {
   display: flex;
   text-transform: uppercase;
+  background-image:  linear-gradient(#b8b8b8 1.2000000000000002px, transparent 1.2000000000000002px), linear-gradient(to right, #b8b8b8 1.2000000000000002px, transparent 1.2000000000000002px);
+  background-size: 24px 24px;
+  border-right: 1px solid #b8b8b8;
 }
 
 .card-header p {
   font-size: 1.7em;
   font-weight: 700;
   color: #928c00;
+  padding-left: 20px;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  border-left: 25px solid black;
 }
 
-.card-header span {
-  margin-left: 15px;
-  height: 2px;
-  margin: auto;
-  margin-left: 25px;
-  background-color: #b8b8b8;
-  flex-grow: 1;
-}
 
 .card-main {
   display: flex;
