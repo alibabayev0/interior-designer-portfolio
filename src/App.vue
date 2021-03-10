@@ -26,7 +26,7 @@ body {
 }
 
 button,
-a { 
+a {
   outline: none;
 }
 ::-webkit-scrollbar {

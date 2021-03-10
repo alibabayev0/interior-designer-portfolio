@@ -9,10 +9,27 @@
         <div class="att-arrow-down-line" />
         <div class="att-arrow att-arrow-down-triangle" />
       </div>
+      <canvas id="canvas" ref="drawCanvas"></canvas>
+      <canvas
+        id="canvas"
+        ref="canvas"
+        @mousedown="startPainting"
+        @mouseup="finishedPainting"
+        @mousemove="draw"
+      ></canvas>
       <div class="left-column-text">
         <p class="main-text">Hi,<br />I'am Gunay</p>
         <p class="main-text-desc">INTERIOR DESIGNER</p>
         <p class="main-text-intro">Welcome to my Personal Website...</p>
+      </div>
+      
+      <div class="paint-nav">
+        <div class="tools">
+          <img class="tool-icon" :class="{ active: drawingType == 0 }" src="../assets/brush.svg" v-on:click="changeDrawing(0)" />
+          <img class="tool-icon" :class="{ active: drawingType == 1 }" src="../assets/diagonal-line.svg" v-on:click="changeDrawing(1)" />
+          <img class="tool-icon" :class="{ active: drawingType == 2 }" src="../assets/square.svg" v-on:click="changeDrawing(2)" />
+          <img class="tool-icon" src="../assets/erase.svg" v-on:click="clearDrawCanvas()" />
+        </div>
       </div>
       <!-- <div class="att-3">
         <div class="att-step-line"></div>
@@ -48,7 +65,15 @@
   align-items: center;
   flex-grow: 2;
   padding: 10em 3em 10em 3em;
-  background-image:  linear-gradient(#b8b8b8 1.2000000000000002px, transparent 1.2000000000000002px), linear-gradient(to right, #b8b8b8 1.2000000000000002px, transparent 1.2000000000000002px);
+  background-image: linear-gradient(
+      #b8b8b8 1.2000000000000002px,
+      transparent 1.2000000000000002px
+    ),
+    linear-gradient(
+      to right,
+      #b8b8b8 1.2000000000000002px,
+      transparent 1.2000000000000002px
+    );
   background-size: 24px 24px;
 }
 
@@ -75,6 +100,61 @@
   font-family: Poppins, sans-serif;
   font-size: 2em;
 }
+
+#canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.paint-nav {
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  margin: auto;
+  height: 50px;
+  background-color: #eeece5;
+  border: 1px solid black;
+  border-bottom: 0;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+}
+
+.tools {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  padding: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.tool-icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 14px;
+  transition: padding 0.3s ease;
+}
+
+.tool-icon:last-of-type {
+  margin-right: 0;
+}
+
+/* .colors {
+  display: flex;
+  align-items: center;
+  flex:1;
+  border-left: 1px solid grey;
+  padding-left: 12px;
+}
+
+.color {
+  width: 24px;
+  height: 24px;
+  border-radius: 30px;
+  margin-right: 10px;
+} */
 
 .right-column {
   display: flex;
@@ -163,6 +243,12 @@ data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAMklEQVQoU2
   margin-left: 0.3em;
   font-family: Poppins, sans-serif;
 }
+
+.active {
+  padding-bottom: 8px;
+  border-bottom: 2px solid #b8b8b8;
+}
+
 /* 
 .att-3 {
   position: absolute;
@@ -185,7 +271,7 @@ data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAMklEQVQoU2
 
 @media (max-width: 575.98px) {
   .left-column {
-    padding: 10% 10% 10% 10%;
+    padding: 10% 10% 20% 10%;
     border-bottom: 1px solid black;
   }
 
@@ -224,6 +310,148 @@ data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAMklEQVQoU2
     display: none;
   }
 }
+
 </style>
 
-<script></script>
+<script>
+export default {
+  data() {
+    return {
+      painting: false,
+      ctx: null,
+      drawCtx: null,
+      drawingType: 0,
+      startPoint: {},
+      endPoint: {}
+    }
+  },
+  mounted() {
+    this.ctx = this.$refs.canvas.getContext('2d')
+    this.drawCtx = this.$refs.drawCanvas.getContext('2d')
+    this.setSizesOfCanvas()
+  },
+  methods: {
+    startPainting(e) {
+      this.painting = true
+      if (this.drawingType != 0) {
+        if (
+          this.$refs.canvas.clientHeight != this.$refs.canvas.height ||
+          this.$refs.canvas.width != this.$refs.canvas.clientWidth
+        ) {
+          this.setSizesOfCanvas()
+        }
+        this.startPoint = this.getMousePos(this.$refs.drawCanvas, e)
+        return
+      }
+      this.draw(e)
+    },
+    finishedPainting(e) {
+      this.painting = false
+
+      this.drawCtx.lineWidth = 2
+      this.drawCtx.lineCap = 'square'
+      this.drawCtx.strokeStyle  = "#535353"
+      if (this.drawingType == 0) {
+        this.drawCtx.lineWidth = 7
+        this.drawCtx.lineCap = 'round'
+        this.drawCtx.beginPath()
+      } else if (this.drawingType == 1) {
+        this.endPoint = this.getMousePos(this.$refs.drawCanvas, e)
+        this.drawCtx.beginPath()
+        this.drawCtx.moveTo(this.startPoint.x, this.startPoint.y)
+        this.drawCtx.lineTo(this.endPoint.x, this.endPoint.y)
+        this.drawCtx.stroke()
+        this.clearCanvas()
+      } else if (this.drawingType == 2) {
+        this.endPoint = this.getMousePos(this.$refs.drawCanvas, e)
+        var rect = {
+          width: this.endPoint.x - this.startPoint.x,
+          height: this.endPoint.y - this.startPoint.y
+        }
+        this.drawCtx.strokeRect(
+          this.startPoint.x,
+          this.startPoint.y,
+          rect.width,
+          rect.height
+        )
+        this.clearCanvas()
+      }
+    },
+    draw(e) {
+      if (!this.painting) return
+
+      this.endPoint = this.getMousePos(this.$refs.canvas, e)
+
+      this.ctx.lineWidth = 2
+      this.ctx.lineCap = 'square'
+      this.ctx.strokeStyle  = "#535353"
+
+      if (this.drawingType == 0) {
+        this.drawCtx.lineWidth = 7
+        this.drawCtx.lineCap = 'round'
+        this.drawCtx.strokeStyle  = "#535353"
+        this.drawCtx.lineTo(this.endPoint.x, this.endPoint.y)
+        this.drawCtx.stroke()
+        this.drawCtx.beginPath()
+        this.drawCtx.moveTo(this.endPoint.x, this.endPoint.y)
+      } else if (this.drawingType == 1) {
+
+        this.clearCanvas()
+        this.ctx.beginPath()
+        this.ctx.moveTo(this.startPoint.x, this.startPoint.y)
+        this.ctx.lineTo(this.endPoint.x, this.endPoint.y)
+        this.ctx.stroke()
+      } else if (this.drawingType == 2) {
+        this.clearCanvas()
+        var rect = {
+          width: this.endPoint.x - this.startPoint.x,
+          height: this.endPoint.y - this.startPoint.y
+        }
+        this.ctx.strokeRect(
+          this.startPoint.x,
+          this.startPoint.y,
+          rect.width,
+          rect.height
+        )
+      }
+    },
+    getMousePos(canvas, evt) {
+      var rect = canvas.getBoundingClientRect()
+      return {
+        x:
+          ((evt.clientX - rect.left) / (rect.right - rect.left)) * canvas.width,
+        y: ((evt.clientY - rect.top) / (rect.bottom - rect.top)) * canvas.height
+      }
+    },
+    setSizesOfCanvas() {
+      this.$refs.canvas.height = this.$refs.canvas.clientHeight
+      this.$refs.canvas.width = this.$refs.canvas.clientWidth
+
+      this.$refs.drawCanvas.height = this.$refs.drawCanvas.clientHeight
+      this.$refs.drawCanvas.width = this.$refs.drawCanvas.clientWidth
+    },
+    clearCanvas() {
+      this.ctx.clearRect(
+        0,
+        0,
+        this.$refs.canvas.clientWidth,
+        this.$refs.canvas.clientHeight
+      )
+    },
+    clearDrawCanvas() {
+      this.drawCtx.clearRect(
+        0,
+        0,
+        this.$refs.drawCanvas.clientWidth,
+        this.$refs.drawCanvas.clientHeight
+      )
+    },
+    changeDrawing(index) {
+       this.drawingType = index
+       this.startPoint = {}
+       this.endPoint = {}
+       this.drawCtx.beginPath()
+    }
+  }
+}
+</script>

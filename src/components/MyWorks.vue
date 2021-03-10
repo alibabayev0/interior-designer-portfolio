@@ -26,7 +26,7 @@
               </p>
             </div>
             <button class="read-more">
-              <router-link :to="{ name:'Works',  params: { id:index}}">
+              <router-link :to="{ name: 'Works', params: { id: index } }">
                 Read More <img src="../assets/arrow.svg" />
               </router-link>
             </button>
@@ -174,7 +174,7 @@
   align-items: center;
   flex-direction: row;
   text-decoration: none;
-  color:white;
+  color: white;
   outline: none;
 }
 

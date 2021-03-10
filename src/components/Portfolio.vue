@@ -1,49 +1,4 @@
 <template>
-  <!-- <div class="main">
-    <div class="project-card">
-      <div class="card-header">
-        <img id="main-img" ref="main_img" :src="current_project.profile" />
-        <div id="header-right-column">
-          <div class="info">
-            <div>
-              <p>{{ current_project.name }}</p>
-              <p>{{ current_project.location }}</p>
-              <p>{{ current_project.date }}</p>
-            </div>
-          </div>
-          <div class="owner">
-            <div>
-              <p>{{ current_project.type }}</p>
-              <p>{{ current_project.owner }}</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="card-info">
-       
-
-        <div class="description">
-          <p>{{ current_project.description }}</p>
-        </div>
-
-        <div class="next-project">
-          
-        </div>
-      </div>
-    </div>
-    <div
-      v-for="(item, name) in current_project.images"
-      :key="name"
-      class="gallery-card"
-    >
-      <p class="card-name">{{ name }}</p>
-      <div class="card-images">
-        <div class="card-image" v-for="images in item" :key="images">
-          <img :src="images" v-on:click="openImage(images, name)" />
-        </div>
-      </div>
-    </div>
-  </div> -->
   <div class="container">
     <div class="project-info">
       <div class="project-title">
@@ -53,16 +8,16 @@
       <p class="sidebar">Location</p>
       <p>{{ current_project.location }}</p>
       <p class="sidebar">Owner</p>
-      <p>{{ current_project.owner }}</p>  
+      <p>{{ current_project.owner }}</p>
       <p class="sidebar">Date</p>
-      <p>{{ current_project.date }}</p>      
+      <p>{{ current_project.date }}</p>
 
       <div class="project-description">
-        {{ current_project.description}}
+        {{ current_project.description }}
       </div>
 
       <div class="project-nav">
-         <div class="prev">
+        <div class="prev">
           <button v-on:click="previous()" class="previous-button">
             <img
               class=""
@@ -88,11 +43,17 @@
       </div>
     </div>
     <div class="project-content">
-        <div class="project-header">
-          {{current_project.description}}
-        </div>
-        <img  class="project-item" v-for="item in current_project.images" :key="item" :src="item"  v-on:click="openImage(images, name)"/>
-    </div>  
+      <div class="project-header">
+        {{ current_project.description }}
+      </div>
+      <img
+        class="project-item"
+        v-for="item in current_project.images"
+        :key="item"
+        :src="item"
+        v-on:click="openImage(images, name)"
+      />
+    </div>
   </div>
   <div id="myModal" class="modal" ref="modal">
     <!-- The Close Button -->
@@ -111,7 +72,7 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: Poppins,sans-serif;
+  font-family: Poppins, sans-serif;
   box-sizing: border-box;
 }
 
@@ -122,27 +83,27 @@
 
 .project-info {
   display: flex;
-  flex: 2;  
+  flex: 2;
   flex-direction: column;
   position: sticky;
   max-height: 100vh;
   min-height: 100vh;
   width: 100%;
   top: 0;
-  padding-left:30px;
+  padding-left: 30px;
   padding-top: 30px;
   padding-right: 30px;
-  border:1px solid black;
+  border: 1px solid black;
   border-top: 0;
 }
 
-.project-title { 
+.project-title {
   font-weight: 900;
   font-size: 2em;
   text-transform: uppercase;
 }
 
-.sidebar:first-of-type { 
+.sidebar:first-of-type {
   margin-top: 40px;
 }
 
@@ -156,9 +117,8 @@
   line-height: 18px;
 }
 
-
-.project-content{
-  display:flex;
+.project-content {
+  display: flex;
   flex-direction: column;
   position: relative;
   justify-content: flex-start;
@@ -183,7 +143,7 @@
   padding-top: 30px;
 }
 
-.project-item{
+.project-item {
   margin-top: 5%;
 }
 
@@ -192,21 +152,20 @@
   justify-self: flex-end;
   align-items: flex-end;
   flex-grow: 1;
-  padding-bottom:10%;
+  padding-bottom: 10%;
 }
 
 .prev {
-  display:flex;
-  flex:1;
+  display: flex;
+  flex: 1;
   justify-content: flex-start;
 }
 
 .next {
-  display:flex;
+  display: flex;
   justify-content: flex-end;
-  flex:1;
+  flex: 1;
 }
-
 
 .previous-button,
 .next-button {
@@ -215,7 +174,7 @@
   align-items: center;
   background-color: transparent;
   border: 0;
-  flex:1;
+  flex: 1;
   padding: 8px;
   cursor: pointer;
 }
@@ -230,55 +189,56 @@
 }
 
 .modal {
-    display: none; /* Hidden by default */
-    flex-direction: column;
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    left: 0;
-    top: 0;
-    justify-content: center;
-    align-items: center;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    /* Black w/ opacity */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.9); 
-    backdrop-filter: blur(8px);
+  display: none; /* Hidden by default */
+  flex-direction: column;
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  justify-content: center;
+  align-items: center;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  /* Black w/ opacity */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.9);
+  backdrop-filter: blur(8px);
 }
 .modal-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 800px;
 }
 .modal-content img {
-    max-width: 800px;
+  max-width: 800px;
 }
 #caption {
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    color: #ccc;
-    padding: 10px 0;
-    height: 20px;
-    font-size: 1.2em;
-    text-transform: capitalize;
-    font-family: Poppins,sans-serif;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 20px;
+  font-size: 1.2em;
+  text-transform: capitalize;
+  font-family: Poppins, sans-serif;
 }
-.modal-content, #caption {
+.modal-content,
+#caption {
   animation-name: zoom;
   animation-duration: 0.5s;
 }
 @keyframes zoom {
   from {
-    transform:scale(0);
+    transform: scale(0);
   }
   to {
-    transform:scale(1);
+    transform: scale(1);
   }
-}   
+}
 .close {
   position: absolute;
   top: 15px;
@@ -293,11 +253,11 @@
   color: #bbb;
   text-decoration: none;
   cursor: pointer;
-} 
+}
 
 /* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (max-width: 1025px ) {
-  .container{
+@media only screen and (max-width: 1025px) {
+  .container {
     display: flex;
     flex-direction: column;
   }
@@ -332,26 +292,23 @@
     padding-right: 30px;
   }
 
-  .project-item:last-of-type{
+  .project-item:last-of-type {
     padding-bottom: 30px;
   }
 
   .project-nav {
     margin-top: 30px;
   }
-
 }
-
-
 </style>
 
 <script>
 import projectData from '../assets/data/projects.json'
 export default {
-  props:{
-    id:{
-      type:String,
-      required:false
+  props: {
+    id: {
+      type: String,
+      required: false
     }
   },
   data() {
@@ -361,8 +318,8 @@ export default {
     }
   },
   created() {
-    if(this.id) {
-      this.current_id = this.id;
+    if (this.id) {
+      this.current_id = this.id
     }
     this.current_project = projectData[this.current_id]
   },

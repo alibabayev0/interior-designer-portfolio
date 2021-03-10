@@ -15,12 +15,12 @@
         the new technologies and advanced techniques, trying to be inventive to
         make each pixel unique in every project I do.
       </p>
-        <button class="read-more">
-          <router-link to="/about">
-            READ MORE
-            <img src="../assets/right-arrow.svg" />
-          </router-link>
-        </button>
+      <button class="read-more">
+        <router-link to="/about">
+          READ MORE
+          <img src="../assets/right-arrow.svg" />
+        </router-link>
+      </button>
     </div>
   </div>
   <div class="att-container">
@@ -37,7 +37,6 @@
 
 .view {
   padding: 0 13% 0% 13%;
-  
 }
 
 .att-container {
@@ -143,9 +142,8 @@
 .read-more a {
   text-decoration: none;
   outline: none;
-  color:#928c00;
+  color: #928c00;
 }
-
 
 /* 
 .about .header {

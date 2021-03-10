@@ -7,10 +7,10 @@
 <script>
 import Portfolio from '../components/Portfolio.vue'
 export default {
-  props:{
+  props: {
     id: {
-      type:String,
-      required:true
+      type: String,
+      required: true
     }
   },
   components: {

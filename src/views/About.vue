@@ -1,14 +1,13 @@
 <template>
-  <about-me></about-me>  
+  <about-me></about-me>
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>
 
 <script>
 import AboutMe from '../components/AboutMe.vue'
 export default {
-  components: { AboutMe },
+  components: { AboutMe }
 }
-</script>>
+</script>
+>

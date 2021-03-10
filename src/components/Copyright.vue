@@ -13,7 +13,15 @@ footer {
   margin-top: 60px;
   margin-bottom: 10px;
   border-top: 1px solid black;
-  background-image:  linear-gradient(#b8b8b8 1.2000000000000002px, transparent 1.2000000000000002px), linear-gradient(to right, #b8b8b8 1.2000000000000002px, transparent 1.2000000000000002px);
+  background-image: linear-gradient(
+      #b8b8b8 1.2000000000000002px,
+      transparent 1.2000000000000002px
+    ),
+    linear-gradient(
+      to right,
+      #b8b8b8 1.2000000000000002px,
+      transparent 1.2000000000000002px
+    );
   background-size: 24px 24px;
 }
 

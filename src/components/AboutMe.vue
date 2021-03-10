@@ -27,26 +27,34 @@
   <div class="main">
     <div class="card education" v-for="(subjects, index) in gunay" :key="index">
       <div class="card-header">
-        <p>{{subjects.name}}</p>
+        <p>{{ subjects.name }}</p>
         <span></span>
       </div>
-      <div class="card-main" v-for="(experiences,index) in subjects.info" :key="index">
+      <div
+        class="card-main"
+        v-for="(experiences, index) in subjects.info"
+        :key="index"
+      >
         <div class="column-info">
-          <p v-if="experiences.location" class="name name-weight">{{experiences.name}}</p>
-          <p v-else class="name">{{experiences.name}}</p>
-          <p>{{experiences.location}}</p>
+          <p v-if="experiences.location" class="name name-weight">
+            {{ experiences.name }}
+          </p>
+          <p v-else class="name">{{ experiences.name }}</p>
+          <p>{{ experiences.location }}</p>
 
-          <ul v-for="(info,index) in experiences.more_info" :key="index">
+          <ul v-for="(info, index) in experiences.more_info" :key="index">
             <li>
-              <p>{{info}}</p>
+              <p>{{ info }}</p>
             </li>
           </ul>
         </div>
-        <p class="date">{{experiences.date}}</p>
+        <p class="date">{{ experiences.date }}</p>
       </div>
     </div>
   </div>
-  <button class="download-cv"/>
+  <a :href="`${publicPath}cv.pdf`" class="download-cv">
+    <button type="button" />
+  </a>
 </template>
 
 <style scoped>
@@ -121,7 +129,7 @@
   align-items: center;
   font-size: 1.5em;
   font-weight: 900;
-  color:#928c00;
+  color: #928c00;
   margin-bottom: 30px;
 }
 
@@ -139,7 +147,15 @@
 .card-header {
   display: flex;
   text-transform: uppercase;
-  background-image:  linear-gradient(#b8b8b8 1.2000000000000002px, transparent 1.2000000000000002px), linear-gradient(to right, #b8b8b8 1.2000000000000002px, transparent 1.2000000000000002px);
+  background-image: linear-gradient(
+      #b8b8b8 1.2000000000000002px,
+      transparent 1.2000000000000002px
+    ),
+    linear-gradient(
+      to right,
+      #b8b8b8 1.2000000000000002px,
+      transparent 1.2000000000000002px
+    );
   background-size: 24px 24px;
   border-right: 1px solid #b8b8b8;
 }
@@ -153,7 +169,6 @@
   padding-top: 5px;
   border-left: 25px solid black;
 }
-
 
 .card-main {
   display: flex;
@@ -181,7 +196,7 @@
   font-size: 1.2em;
 }
 
-.name-weight{
+.name-weight {
   font-weight: 700;
 }
 
@@ -195,17 +210,23 @@
   position: fixed;
   bottom: 0;
   right: 0;
-  margin-right: 30px;
-  margin-bottom: 30px;
   width: 70px;
   height: 70px;
-  background: url("../assets/pdf.svg");
+  text-decoration: none;
+  outline: none;
+  margin-right: 30px;
+  margin-bottom: 30px;
+}
+
+.download-cv button {
+  width: 70px;
+  height: 70px;
+  background: url('../assets/pdf.svg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: 70% 80%;
-  border: 1px solid black;
-  border-radius: 40px;
   outline: none;
+  border-radius: 40px;
 }
 
 @media (max-width: 768.98px) {
@@ -230,18 +251,17 @@
 </style>
 
 <script>
-
-import portfolio from '../assets/data/portfolio.json';
+import portfolio from '../assets/data/portfolio.json'
 
 export default {
   data() {
     return {
-       gunay: portfolio
+      gunay: portfolio,
+      publicPath: process.env.BASE_URL
     }
   },
   created() {
-    console.log(this.gunay);
+    console.log(this.gunay)
   }
 }
-
 </script>
