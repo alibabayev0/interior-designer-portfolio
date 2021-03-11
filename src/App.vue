@@ -61,7 +61,7 @@ export default {
   },
   mounted() {
     document.addEventListener('mousemove', this.moveCursor)
-    
+
     document.addEventListener('mouseleave', function() {
       this.hideCursor = true
     })
