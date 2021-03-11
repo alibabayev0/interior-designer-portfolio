@@ -49,7 +49,7 @@
           </a>
         </li>
         <li>
-          <a href="tel:+994-50-243-44-00">
+          <a href="tel:+39-351-665-27-57">
             <img src="../assets/phone.svg" width="24" height="24" />
           </a>
         </li>
@@ -179,7 +179,8 @@
 }
 
 @media (max-width: 575.98px) {
-  .contact {
+  .container {
+    padding-bottom: 13%;
   }
 }
 </style>
