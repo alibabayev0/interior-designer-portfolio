@@ -100,8 +100,6 @@ html {
   transition: width 0.3s;
 }
 
-
-
 /* .navigation li a.router-link-exact-active{
   font-weight: 550;
 } */

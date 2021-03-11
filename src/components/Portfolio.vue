@@ -51,7 +51,7 @@
         v-for="item in current_project.images"
         :key="item"
         :src="item"
-        v-on:click="openImage(images, name)"
+        v-on:click="openImage(item, name)"
       />
     </div>
   </div>
@@ -79,6 +79,7 @@
 .container {
   display: flex;
   position: relative;
+
 }
 
 .project-info {
@@ -130,6 +131,16 @@
   border-top: 1px solid black;
   border-bottom: 1px solid black;
   flex: 5;
+    background-image: linear-gradient(
+      #b8b8b8 1.2000000000000002px,
+      transparent 1.2000000000000002px
+    ),
+    linear-gradient(
+      to right,
+      #b8b8b8 1.2000000000000002px,
+      transparent 1.2000000000000002px
+    );
+  background-size: 24px 24px;
 }
 
 .project-content img {

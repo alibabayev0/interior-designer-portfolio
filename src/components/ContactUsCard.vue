@@ -85,7 +85,7 @@
   width: 100%;
   height: 1px;
   right: 0;
-  background-color: black;
+  background-color: #928c00;
 }
 
 .container {
@@ -175,7 +175,7 @@
 .contact .att-1 {
   width: 1px;
   height: 35%;
-  background-color: black;
+  background-color: #928c00;
 }
 
 @media (max-width: 575.98px) {

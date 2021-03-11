@@ -22,13 +22,32 @@
         <p class="main-text-desc">INTERIOR DESIGNER</p>
         <p class="main-text-intro">Welcome to my Personal Website...</p>
       </div>
-      
+
       <div class="paint-nav">
         <div class="tools">
-          <img class="tool-icon" :class="{ active: drawingType == 0 }" src="../assets/brush.svg" v-on:click="changeDrawing(0)" />
-          <img class="tool-icon" :class="{ active: drawingType == 1 }" src="../assets/diagonal-line.svg" v-on:click="changeDrawing(1)" />
-          <img class="tool-icon" :class="{ active: drawingType == 2 }" src="../assets/square.svg" v-on:click="changeDrawing(2)" />
-          <img class="tool-icon" src="../assets/erase.svg" v-on:click="clearDrawCanvas()" />
+          <img
+            class="tool-icon"
+            :class="{ active: drawingType == 0 }"
+            src="../assets/brush.svg"
+            v-on:click="changeDrawing(0)"
+          />
+          <img
+            class="tool-icon"
+            :class="{ active: drawingType == 1 }"
+            src="../assets/diagonal-line.svg"
+            v-on:click="changeDrawing(1)"
+          />
+          <img
+            class="tool-icon"
+            :class="{ active: drawingType == 2 }"
+            src="../assets/square.svg"
+            v-on:click="changeDrawing(2)"
+          />
+          <img
+            class="tool-icon"
+            src="../assets/erase.svg"
+            v-on:click="clearDrawCanvas()"
+          />
         </div>
       </div>
       <!-- <div class="att-3">
@@ -105,6 +124,7 @@
   display: block;
   width: 100%;
   height: 100%;
+  top:0;
   position: absolute;
 }
 
@@ -135,6 +155,7 @@
   height: 24px;
   margin-right: 14px;
   transition: padding 0.3s ease;
+  cursor: pointer;
 }
 
 .tool-icon:last-of-type {
@@ -246,7 +267,7 @@ data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAMklEQVQoU2
 
 .active {
   padding-bottom: 8px;
-  border-bottom: 2px solid #b8b8b8;
+  border-bottom: 2px solid #928c00;
 }
 
 /* 
@@ -271,7 +292,7 @@ data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAMklEQVQoU2
 
 @media (max-width: 575.98px) {
   .left-column {
-    padding: 10% 10% 20% 10%;
+    padding: 10% 10% 35% 10%;
     border-bottom: 1px solid black;
   }
 
@@ -310,7 +331,6 @@ data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAMklEQVQoU2
     display: none;
   }
 }
-
 </style>
 
 <script>
@@ -350,7 +370,7 @@ export default {
 
       this.drawCtx.lineWidth = 2
       this.drawCtx.lineCap = 'square'
-      this.drawCtx.strokeStyle  = "#535353"
+      this.drawCtx.strokeStyle = '#535353'
       if (this.drawingType == 0) {
         this.drawCtx.lineWidth = 7
         this.drawCtx.lineCap = 'round'
@@ -384,18 +404,17 @@ export default {
 
       this.ctx.lineWidth = 2
       this.ctx.lineCap = 'square'
-      this.ctx.strokeStyle  = "#535353"
+      this.ctx.strokeStyle = '#535353'
 
       if (this.drawingType == 0) {
         this.drawCtx.lineWidth = 7
         this.drawCtx.lineCap = 'round'
-        this.drawCtx.strokeStyle  = "#535353"
+        this.drawCtx.strokeStyle = '#535353'
         this.drawCtx.lineTo(this.endPoint.x, this.endPoint.y)
         this.drawCtx.stroke()
         this.drawCtx.beginPath()
         this.drawCtx.moveTo(this.endPoint.x, this.endPoint.y)
       } else if (this.drawingType == 1) {
-
         this.clearCanvas()
         this.ctx.beginPath()
         this.ctx.moveTo(this.startPoint.x, this.startPoint.y)
@@ -447,10 +466,10 @@ export default {
       )
     },
     changeDrawing(index) {
-       this.drawingType = index
-       this.startPoint = {}
-       this.endPoint = {}
-       this.drawCtx.beginPath()
+      this.drawingType = index
+      this.startPoint = {}
+      this.endPoint = {}
+      this.drawCtx.beginPath()
     }
   }
 }
