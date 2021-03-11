@@ -69,6 +69,12 @@ export default {
     document.addEventListener('mouseenter', function() {
       this.hideCursor = false
     })
+  },
+  watch: {
+    // eslint-disable-next-line no-unused-vars
+    $route(to, from) {
+      document.title = to.meta.title || 'Gunay Babayeva Portfolio'
+    }
   }
 }
 </script>
