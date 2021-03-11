@@ -24,7 +24,9 @@ npm run lint
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
 
-
+### Production website
+`https://gunaybabayeva.com`
+[https://www.gunaybabayeva.com](https://www.gunaybabayeva.com "Gunay Babayeva's portfolio")
 ### Colors 
 Beige - `#EEECE5`
 White - `#F8F8F8`
